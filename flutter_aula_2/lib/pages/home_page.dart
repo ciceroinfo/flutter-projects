@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_aula_2/controllers/theme_controller.dart';
 import 'package:flutter_aula_2/model/time.dart';
 import 'package:flutter_aula_2/pages/home_controller.dart';
 import 'package:flutter_aula_2/pages/time_page.dart';
@@ -15,23 +16,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late HomeController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = HomeController();
-  }
+  var controller = ThemeController.to;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Brasileirão'),
+        actions: [
+          PopupMenuButton(
+            icon: Icon(Icons.more_vert),
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                child: ListTile(
+                  leading: Obx(() => controller.isDark.value
+                      ? Icon(Icons.brightness_7)
+                      : Icon(Icons.brightness_2)),
+                  title: Obx(() =>
+                      controller.isDark.value ? Text('Light') : Text('Dark')),
+                  onTap: controller.changeTheme(),
+                ),
+              )
+            ],
+          )
+        ],
       ),
       body: Consumer<TimesRepository>(builder: (context, repositorio, child) {
         return ListView.separated(
-          itemCount: controller.tabela.length,
+          itemCount: repositorio.times.length,
           separatorBuilder: (_, __) => Divider(),
           itemBuilder: (BuildContext context, int i) {
             final List<Time> tabela = repositorio.times;
