@@ -3,7 +3,9 @@ import 'package:flutter_aula_2/model/time.dart';
 import 'package:flutter_aula_2/pages/home_controller.dart';
 import 'package:flutter_aula_2/pages/time_page.dart';
 import 'package:flutter_aula_2/repositories/times_repository.dart';
+import 'package:flutter_aula_2/widgets/brasao.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -35,18 +37,16 @@ class _HomePageState extends State<HomePage> {
             final List<Time> tabela = repositorio.times;
 
             return ListTile(
-              leading: Image.network(
-                tabela[i].brasao,
+              leading: Brasao(
+                image: tabela[i].brasao,
                 width: 40,
               ),
               title: Text(tabela[i].nome),
               subtitle: Text('Titulos: ${tabela[i].titulos.length}'),
               trailing: Text(tabela[i].pontos.toString()),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => TimePage(time: tabela[i])));
+                Get.to(
+                    () => TimePage(key: Key(tabela[i].nome), time: tabela[i]));
               },
             );
           },
