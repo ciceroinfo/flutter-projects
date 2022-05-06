@@ -14,52 +14,68 @@ class TimesRepository extends ChangeNotifier {
     notifyListeners();
   }
 
+  void editTitulo(
+      {required Titulo titulo,
+      required String campeonato,
+      required String ano}) {
+    titulo.campeonato = campeonato;
+    titulo.ano = ano;
+
+    notifyListeners();
+  }
+
   TimesRepository() {
     _times.addAll([
       Time(
           nome: 'Flamengo',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/flamengo.png',
+          brasao:
+              'https://logodetimes.com/times/flamengo/logo-flamengo-256.png',
           pontos: 71,
           cor: Colors.red),
       Time(
           nome: 'Internacional',
           brasao:
-              'https://e.imguol.com/futebol/brasoes/40x40/internacional.png',
+              'https://logodetimes.com/times/internacional/logo-internacional-256.png',
           pontos: 91,
           cor: Colors.red),
       Time(
           nome: 'Gremio',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/gremio.png',
+          brasao: 'https://logodetimes.com/times/gremio/logo-gremio-256.png',
           pontos: 71,
           cor: Colors.blue),
       Time(
           nome: 'Coritiba',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/coritiba.png',
+          brasao:
+              'https://logodetimes.com/times/coritiba/logo-coritiba-256.png',
           pontos: 91,
           cor: Colors.green),
       Time(
           nome: 'Palmeiras',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/palmeiras.png',
+          brasao:
+              'https://logodetimes.com/times/palmeiras/logo-palmeiras-256.png',
           pontos: 71,
           cor: Colors.green),
       Time(
           nome: 'Santos',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/santos.png',
+          brasao: 'https://logodetimes.com/times/santos/logo-santos-256.png',
           pontos: 71,
           cor: Colors.blueGrey),
       Time(
           nome: 'Fluminense',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/fluminense.png',
+          brasao:
+              'https://logodetimes.com/times/fluminense/logo-fluminense-256.png',
           pontos: 71,
           cor: Colors.blueGrey),
       Time(
           nome: 'Bragantino',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/bragantino.png',
+          brasao:
+              'https://logodetimes.com/times/bragantino/logo-bragantino-256.png',
           pontos: 71,
           cor: Colors.blueGrey),
       Time(
           nome: 'Corinthians',
-          brasao: 'https://e.imguol.com/futebol/brasoes/40x40/corinthians.png',
+          brasao:
+              'https://logodetimes.com/times/corinthians/logo-corinthians-256.png',
           pontos: 71,
           cor: Colors.blueGrey),
     ]);

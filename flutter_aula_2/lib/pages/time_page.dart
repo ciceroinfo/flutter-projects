@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_aula_2/model/time.dart';
 import 'package:flutter_aula_2/model/titulo.dart';
 import 'package:flutter_aula_2/repositories/times_repository.dart';
+import 'package:flutter_aula_2/widgets/brasao.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 import 'add_titulo_page.dart';
+import 'edit_titulo_page.dart';
 
 class TimePage extends StatefulWidget {
   Time time;
@@ -45,8 +48,10 @@ class _TimePageState extends State<TimePage> {
             children: [
               Padding(
                 padding: EdgeInsets.all(24),
-                child: Image.network(
-                    widget.time.brasao.replaceAll("40x40", "100x100")),
+                child: Brasao(
+                  image: widget.time.brasao,
+                  width: 250,
+                ),
               ),
               Text('Pontos: ${widget.time.pontos}')
             ],
@@ -76,6 +81,12 @@ class _TimePageState extends State<TimePage> {
                 leading: const Icon(Icons.emoji_events),
                 title: Text(time.titulos[index].campeonato),
                 trailing: Text(time.titulos[index].ano),
+                onTap: () {
+                  Get.to(
+                    EditTituloPage(titulo: time.titulos[index]),
+                    fullscreenDialog: true,
+                  );
+                },
               );
             },
             separatorBuilder: (_, __) => const Divider(),
@@ -83,11 +94,6 @@ class _TimePageState extends State<TimePage> {
   }
 
   void tituloPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => AddTituloPage(time: widget.time),
-      ),
-    );
+    Get.to(() => AddTituloPage(time: widget.time));
   }
 }
