@@ -31,8 +31,11 @@ dependencies:
     sdk: flutter
   provider:
   get:
-  cached_network_image: ^2.5.1
-  shared_preferences: ^2.0.5
+  cached_network_image:
+  shared_preferences:
+  hive:
+  path_provider:
+  sqflite:
 
 
   # The following adds the Cupertino Icons font to your application.
