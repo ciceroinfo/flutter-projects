@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_aula_2/config.dart';
 import 'package:flutter_aula_2/controllers/theme_controller.dart';
-import 'package:flutter_aula_2/pages/home_page.dart';
 import 'package:flutter_aula_2/repositories/times_repository.dart';
+import 'package:flutter_aula_2/widgets/check_auth.dart';
 
 import 'package:get/get.dart';
 
 import 'package:provider/provider.dart';
 
-void main() {
-  Get.lazyPut<ThemeController>(() => ThemeController());
+void main() async {
+  await initConfigurations();
 
   runApp(ChangeNotifierProvider(
     create: (context) => TimesRepository(),
@@ -43,7 +44,7 @@ class MeuAplicativo extends StatelessWidget {
                 primary: Colors.deepPurpleAccent[100])),
       ),
       themeMode: ThemeMode.system,
-      home: HomePage(),
+      home: CheckAuth(),
     );
   }
 }

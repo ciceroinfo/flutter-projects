@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "251357435549",
+    "firebase_url": "https://flutter-memory-game-default-rtdb.firebaseio.com",
+    "project_id": "flutter-memory-game",
+    "storage_bucket": "flutter-memory-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251357435549:android:c499e554bc04c316b82674",
+        "android_client_info": {
+          "package_name": "com.ciceroinfo.flutter_memory_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251357435549-koh0mm6hg1h269lcg3at886bisr1o1n6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxVyUGKne9TQLEgP2_1AtgbraMiiOK5WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251357435549-koh0mm6hg1h269lcg3at886bisr1o1n6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
