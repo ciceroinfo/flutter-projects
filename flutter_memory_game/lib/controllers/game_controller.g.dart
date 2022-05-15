@@ -17,7 +17,8 @@ mixin _$GameController on GameControllerBase, Store {
               name: 'GameControllerBase.jogadaCompleta'))
           .value;
 
-  final _$gameCardsAtom = Atom(name: 'GameControllerBase.gameCards');
+  late final _$gameCardsAtom =
+      Atom(name: 'GameControllerBase.gameCards', context: context);
 
   @override
   List<GameOpcao> get gameCards {
@@ -32,7 +33,8 @@ mixin _$GameController on GameControllerBase, Store {
     });
   }
 
-  final _$scoreAtom = Atom(name: 'GameControllerBase.score');
+  late final _$scoreAtom =
+      Atom(name: 'GameControllerBase.score', context: context);
 
   @override
   int get score {
@@ -47,7 +49,8 @@ mixin _$GameController on GameControllerBase, Store {
     });
   }
 
-  final _$venceuAtom = Atom(name: 'GameControllerBase.venceu');
+  late final _$venceuAtom =
+      Atom(name: 'GameControllerBase.venceu', context: context);
 
   @override
   bool get venceu {
@@ -62,7 +65,8 @@ mixin _$GameController on GameControllerBase, Store {
     });
   }
 
-  final _$perdeuAtom = Atom(name: 'GameControllerBase.perdeu');
+  late final _$perdeuAtom =
+      Atom(name: 'GameControllerBase.perdeu', context: context);
 
   @override
   bool get perdeu {

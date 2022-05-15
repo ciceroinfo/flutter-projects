@@ -25,12 +25,12 @@ class _RecordesState extends State<Recordes> {
     return Card(
       color: Colors.grey[900],
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(8),
               child: Text(
                 'Recordes',
                 style: TextStyle(
