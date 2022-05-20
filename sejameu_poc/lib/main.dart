@@ -3,9 +3,15 @@ import 'package:provider/provider.dart';
 import 'package:sejameu_poc/repositories/favoritas_repository.dart';
 import 'sejameu_theme.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 import 'pages/home_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => FavoritasRepository(),
